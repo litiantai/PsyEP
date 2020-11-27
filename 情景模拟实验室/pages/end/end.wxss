@@ -1,0 +1,41 @@
+page{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* height: 100%; */
+    background: linear-gradient(-45deg,#2e3942,#3b343f,#35124d);
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+}/* pages/end/end.wxss */
+
+.thanks{
+    display: flex;
+    align-items: center;
+    height: 50%;
+    color: aliceblue;
+    font-size: 45rpx;
+    font-family: 'webfont';
+    justify-content: center;
+    padding: 10%;
+}
+.content{
+    display: flex;
+    align-items: center;
+    height: 50%;
+    color: aliceblue;
+    font-size: 30rpx;
+    font-family: 'webfont';
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'webfont';
+    font-display: swap;
+    src: url('//at.alicdn.com/t/webfont_06xv4zbvjy9a.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/webfont_06xv4zbvjy9a.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/webfont_06xv4zbvjy9a.woff2') format('woff2'),
+    url('//at.alicdn.com/t/webfont_06xv4zbvjy9a.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/webfont_06xv4zbvjy9a.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/webfont_06xv4zbvjy9a.svg#阿里汉仪智能黑体') format('svg'); /* iOS 4.1- */
+}

@@ -1,0 +1,27 @@
+
+<view class="father">
+  <view class="show">
+    <image src="{{url}}" style="background-size: 100%;"></image>
+  </view>
+</view>
+<view class="choose">
+  <!-- <button>开始投掷</button> -->
+  <scroll-view scroll-y="true">
+    <text style="font-size: 50rpx;">选择点数:</text>
+    <view>
+      <radio-group bindchange="choose" style="{{isReady == true?'pointer-events:auto':'pointer-events:none'}}" > 
+        <radio value="1">1</radio>
+        <radio value="2">2</radio>
+        <radio value="3">3</radio>
+        <radio value="4">4</radio>
+        <radio value="5">5</radio>
+        <radio value="6">6</radio>
+      </radio-group>
+    </view>
+  </scroll-view>
+  <button bindtap="next">确定</button>
+</view>
+
+<modal title="请选择点数"  hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+
+</modal>

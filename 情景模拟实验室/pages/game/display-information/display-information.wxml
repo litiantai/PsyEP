@@ -1,0 +1,14 @@
+<!--pages/back/back.wxml-->
+<view class="big">
+    <view class="time">正在进行第{{i}}次游戏</view>
+    <view class="input" style="margin-top:40rpx">
+
+        <view class="details">
+            <!-- <view>本次获得金额：{{get}}</view> -->
+            <view wx:if="{{model == 1}}">本次损失金额:{{lose}}  元</view>
+            <view wx:if="{{model == 0}}">本次获得金额:{{get}}  元</view>
+            <view style="font-size: 43rpx;margin-bottom:20rpx">累计金额:{{all}}元</view>
+        </view>
+    </view>
+
+</view>

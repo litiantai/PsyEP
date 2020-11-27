@@ -1,0 +1,65 @@
+
+page{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* height: 100%; */
+    background: linear-gradient(-45deg,#2e3942,#3b343f,#35124d);
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .father{
+    display: flex;
+    justify-content: center;
+    height: 30%;
+  }
+  .show{
+    /* background-color: white; */
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  view{
+    /* border: white solid 1rpx; */
+    box-sizing: border-box;
+  }
+  .show image{
+    width: 300rpx;
+    height: 300rpx;
+  }
+  .choose{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .choose>scroll-view{
+    width: 70%;
+    height: 70%;
+    border-radius: 40rpx;
+    background-color: white;
+    padding: 20rpx;
+  
+  }
+  .choose>view>text{
+    font-weight: 20rpx;
+    font-size: 50rpx;
+  
+  }
+  
+  radio-group{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  radio{
+    display: block;
+    margin: 5%;
+  }
+  

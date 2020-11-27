@@ -1,0 +1,66 @@
+
+page{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    /* height: 100%; */
+    background: linear-gradient(-45deg,#2e3942,#3b343f,#35124d);
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.time{
+    margin-bottom: 50rpx;
+    color: #ffffff;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+.big{
+    flex-direction: column;
+    width: 80%;
+    display: flex;
+    align-items: center;
+
+}
+view{
+    box-sizing: border-box;
+}
+/* @font-face{
+  font-family: 'begin';
+  src: url('../方正剪纸简体.ttf');
+} */
+
+.input{
+    width: 80%;
+    height: 100%;
+    border-radius: 20rpx;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.begin{
+    margin-top: 20rpx;
+    /* text-align: center; */
+    /* font-family: 'begin'; */
+    font-size: 50rpx;
+
+}
+.input view{
+    width: 80%;
+    font-size: 30rpx;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: -2%;
+    line-height: 40rpx;
+}
+button{
+    width: 200rpx;
+    height: 80rpx;
+}
+.details view{
+    font-weight: bold;
+    margin-top: 10rpx;
+}

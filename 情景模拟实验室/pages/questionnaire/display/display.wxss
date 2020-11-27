@@ -1,0 +1,25 @@
+/* pages/questionnaire/display/display.wxss*/
+page{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg,#2e3942,#3b343f,#35124d);
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  view{
+    box-sizing: border-box;
+    border: 2px gray solid;
+    box-shadow: 4rpx 8rpx  16rpx 8rpx #35124d;
+    height: 150rpx;
+    width: 300rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  

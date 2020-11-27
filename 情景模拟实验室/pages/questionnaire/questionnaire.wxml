@@ -1,0 +1,50 @@
+<view class="input">
+    <scroll-view scroll-y="true" style="height:100%;">
+        <block wx:for="{{QT}}" refresher-triggered="{{back}}" wx:for-index="idx" wx:for-item="questions" wx:key="index">
+            <view class="block_container">
+                <text wx:if="{{questions.id == 32}}" selectable="{{true}}" style="color:#000; font-weight: 600rpx;font-family:'楷体'" class="question_title">{{questions.question}}
+                    <text  style="color:red;font-family:'楷体'">{{questions.que}}</text></text>
+                <text wx:else selectable="{{true}}" style="color:#000; font-weight: 600rpx;" class="question_title">{{questions.question}}</text>
+
+                <view bindtap="PointTap" wx:if="{{questions.id != 32}}" class="question_style" data-postid="{{idx}}"
+                    data-id="1"> {{questions.A}}
+                    <image wx:if="{{questions.isPoint1}}" src="/icon/xuanzhong.png"
+                        style="height:30rpx;width:30rpx;margin-left:30rpx;margin-top:5rpx"></image>
+                </view>
+
+                <view bindtap="PointTap" wx:if="{{questions.id != 32}}" class="question_style" data-postid="{{idx}}"
+                    data-id="2"> {{questions.B}}
+                    <image wx:if="{{questions.isPoint2}}" src="/icon/xuanzhong.png"
+                        style="height:30rpx;width:30rpx;margin-left:30rpx;margin-top:5rpx"></image>
+                </view>
+
+                <view bindtap="PointTap" wx:if="{{questions.id > 32}}" class="question_style" data-postid="{{idx}}"
+                    data-id="3"> {{questions.C}}
+                    <image wx:if="{{questions.isPoint3}}" src="/icon/xuanzhong.png"
+                        style="height:30rpx;width:30rpx;margin-left:30rpx;margin-top:5rpx"></image>
+                </view>
+
+                <view bindtap="PointTap" wx:if="{{questions.id > 32}}" class="question_style" data-postid="{{idx}}"
+                    data-id="4"> {{questions.D}}
+                    <image wx:if="{{questions.isPoint4}}" src="/icon/xuanzhong.png"
+                        style="height:30rpx;width:30rpx;margin-left:30rpx;margin-top:5rpx"></image>
+                </view>
+
+                <view bindtap="PointTap" wx:if="{{questions.id > 32}}" class="question_style" data-postid="{{idx}}"
+                    data-id="5"> {{questions.E}}
+                    <image wx:if="{{questions.isPoint5}}" src="/icon/xuanzhong.png"
+                        style="height:30rpx;width:30rpx;margin-left:30rpx;margin-top:5rpx"></image>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+
+<button bindtap="next">
+    下一步
+</button>
+
+
+<modal title="有问题未答哦" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+
+</modal>

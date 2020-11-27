@@ -1,0 +1,83 @@
+<!--pages/back/back.wxml-->
+<view class="big">
+    <view class="input">
+        <view wx:if="{{isGameOK == false}}">
+            <view style="height: 100%;line-height: 46rpx;">姓名：</view>
+            <input wx:if="{{isName == false}}" bindinput="NameTap" placeholder="姓名"
+                placeholder-style="margin-left:15rpx"></input>
+            <text wx:if="{{isName == true}}" bindtap="nametap" style="margin-right:300rpx">{{name}}</text>
+        </view>
+        <view wx:if="{{isGameOK == false}}">
+            出生日期:<input wx:if="{{isYear == false}}" type="text" name="date" placeholder="选择日期" value="{{dateInput}}"
+                placeholder-style="margin-left:15rpx" disabled="disabled" bindtap='selsectdate'></input>
+            <text wx:else bindtap="dateTap" style="margin-right:100rpx">{{date}}</text>
+        </view>
+        <view wx:if="{{isGameOK == false}}">
+            性别:
+            <radio-group>
+                <radio checked="{{isChecked == 1}}" bindtap="sexTap" data-radioId="nan">男</radio>
+                <radio checked="{{isChecked == 0}}" bindtap="sexTap" data-radioId="nv" style="margin-right:100rpx">女
+                </radio>
+                <!-- <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text> -->
+            </radio-group>
+        </view>
+        <view wx:if="{{isGameOK == false}}">
+            身份:
+            <radio-group>
+                <radio checked="{{ischecked == 1}}" bindtap="xuanze" data-radioId="student">学生</radio>
+                <radio checked="{{ischecked == 0}}" bindtap="xuanze" data-radioId="shehui">社会人士</radio>
+            </radio-group>
+        </view>
+
+        <view wx:if="{{isGameOK == true && choose == 'phone'}}"
+            style="display:flex; flex-direction: column; justify-content: space-evenly;height:100%;">
+            以电话方式联系:
+            <radio-group>
+                <radio checked="{{isPhone == 'zhifubao'}}" bindtap="phone" data-radioId="zhifubao" style="margin-left:20rpx">支付宝
+                </radio>
+                <radio checked="{{isPhone == 'weixin'}}" bindtap="phone" data-radioId="weixin">微信</radio>
+            </radio-group>
+            <input bindinput="PhoneTap" placeholder="请输入联系方式" placeholder-style="margin-left:15rpx;"></input>
+        </view>
+
+        <view wx:if="{{isGameOK == true && choose == 'image'}}" style="display:flex; flex-direction: column;justify-content: space-evenly;height:100%;">
+            以付款码方式联系:
+            <button bindtap="ChooseImag" style="margin-top:50rpx" wx:if="{{tempFilePaths == ''}}">点击添加图片</button>
+            <view>
+                <image src="{{tempFilePaths}}" style="height:380rpx;width:280rpx" mode="aspectFit"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="bg" bindtap='hideview' wx:if="{{showWin}}"></view>
+    <view class="show" wx:if="{{showWin}}">
+        <view class="title_time">
+            <view class="cancel" bindtap="deleteShow">取消</view>
+            <view class="define" bindtap="defineShow">确定</view>
+        </view>
+        <view class="dateTime" wx:if="{{years.length>0 && months.length>0 && days.length>0}}">
+            <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}"
+                indicator-class="picker-box" bindchange="bindChange">
+                <picker-view-column>
+                    <view wx:for="{{years}}" style="line-height: 50px" wx:key="{{index}}">{{item}}年</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{months}}" style="line-height: 50px" wx:key="{{index}}">{{item}}月</view>
+                </picker-view-column>
+                <picker-view-column>
+                    <view wx:for="{{days}}" style="line-height: 50px" wx:key="{{index}}">{{item}}日</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+
+</view>
+<button style="margin-bottom:100rpx" bindtap="next">
+    下一步
+</button>
+
+
+
+<modal title="{{is}}" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+
+</modal>

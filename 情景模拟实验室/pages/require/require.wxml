@@ -1,0 +1,25 @@
+<view class="input">
+    <text class="begin">答题</text>
+    <view class="block_container">
+        <text class="question_title">{{questions.id}}.{{questions.question}} :</text>
+        <view style="display: inline; margin-top: 80rpx;">
+            <text bindtap="nextQuestionTap" class="question_style" data-id="1"> {{questions.A}}</text>
+            <image wx:if="{{getID == 1}}" class="question_icon" style="width:40rpx;height:40rpx"
+                src="/icon/xuanzhong.png"></image>
+        </view>
+        <view style="display: inline;  margin-top: 80rpx;">
+            <text bindtap="nextQuestionTap" class="question_style" data-id="2"> {{questions.B}}</text>
+            <image wx:if="{{getID == 2}}" class="question_icon" style="width:40rpx;height:40rpx"
+                src="/icon/xuanzhong.png"></image>
+        </view>
+
+        <view style="display: inline;  margin-top: 80rpx;">
+            <text bindtap="nextQuestionTap" class="question_style" data-id="3"> {{questions.C}}</text>
+            <image wx:if="{{getID == 3}}" class="question_icon" style="width:40rpx;height:40rpx"
+                src="/icon/xuanzhong.png"></image>
+        </view>
+    </view>
+</view>
+<modal title="回答错误！" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+    
+</modal>

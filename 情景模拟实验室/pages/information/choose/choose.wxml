@@ -1,0 +1,14 @@
+<view class="thanks">
+    <view bindtap="Pnext">
+        我想以电话方式联系
+        <image src="/icon/xiangyou.png"></image>
+    </view>
+    <view bindtap="Inext">
+        我想以付款码方式联系
+        <image src="/icon/xiangyou.png"></image>
+    </view>
+</view>
+<view class="content">
+    <text style="color:aliceblue;font-family:'楷体';">之后会通过您留下的联系方式，在5个工作日内给予您游戏奖励</text>
+</view>
+

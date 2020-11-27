@@ -1,0 +1,9 @@
+<view class="thanks">
+    <view>
+        你已完成本游戏，感谢参与，祝你生活愉快哦~
+    </view>
+</view>
+<view class="content">
+    <view>之后会通过您留下的联系方式，给予您游戏奖励</view>
+</view>
+

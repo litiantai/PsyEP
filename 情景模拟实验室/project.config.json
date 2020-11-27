@@ -1,0 +1,126 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.14.0",
+  "appid": "wx392ad04e192d4758",
+  "projectname": "%E6%83%85%E6%99%AF%E6%A8%A1%E6%8B%9F%E5%AE%9E%E9%AA%8C%E5%AE%A4",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/questionnaire/questionnaire",
+          "pathName": "pages/questionnaire/questionnaire",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/game/display/display",
+          "pathName": "pages/game/display/display",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/information/information",
+          "pathName": "pages/information/information",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/game/display-information/display-information",
+          "pathName": "pages/game/display-information/display-information",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/game/game",
+          "pathName": "pages/game/game",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/questionnaire/display/display",
+          "pathName": "pages/questionnaire/display/display",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/end/end",
+          "pathName": "pages/end/end",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/information/choose/choose",
+          "pathName": "pages/information/choose/choose",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

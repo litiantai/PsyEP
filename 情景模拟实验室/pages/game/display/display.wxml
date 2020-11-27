@@ -1,0 +1,14 @@
+<view class="big">
+  <view class="input" style="width: 80%;">
+  
+  <view class="details" style="font-size: 40rpx;line-height: 100rpx;">
+    恭喜你已通过游戏规则测试,接下来开始正式游戏
+  </view>
+
+
+</view>
+
+</view>
+<button bindtap="next">
+  开始游戏
+</button>
