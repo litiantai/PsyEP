@@ -95,11 +95,9 @@ Page({
           wx.setStorageSync('isQuestionaire', false) //是否开始答题
           wx.setStorageSync('isQF', false) //是否完成答题
           wx.setStorageSync('money', 5.0)
-          setTimeout(function(e){
             wx.redirectTo({
               url: '/pages/game/display/display',
             })
-          },2000)
         }
       }
       if (that.data.model == 0) {
@@ -122,16 +120,14 @@ Page({
         wx.setStorageSync('right', that.data.right)
         console.log(that.data.i)
         if (that.data.i == 3 && that.data.right == 3) {
-          wx.setStorageSync('isPass', true) //通过四个问题
+          wx.setStorageSync('isPass', true) //通过三个问题
           wx.setStorageSync('isGame', false) //是否完成游戏
           wx.setStorageSync('isQuestionaire', false) //是否开始答题
           wx.setStorageSync('isQF', false) //是否完成答题
           wx.setStorageSync('money', 0.0)
-          setTimeout(function(e){
             wx.redirectTo({
               url: '/pages/game/display/display',
             })
-          },2000)
         }
       }
     },1000)

@@ -63,3 +63,10 @@ radio{
   height: 100%;
   padding-top: 0rpx;
 }
+
+image{
+  height: 400px;
+  width: 244px;
+  border-radius: 5%;
+  box-shadow: wheat 2px 0px 8px 0px;
+}

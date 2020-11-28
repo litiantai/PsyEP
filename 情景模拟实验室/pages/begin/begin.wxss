@@ -29,7 +29,6 @@
 .content{
     display: flex;
     align-items: center;
-    height: 50%;
     color: aliceblue;
     font-size: 28rpx;
     font-family: 'webfont';

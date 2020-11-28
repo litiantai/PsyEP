@@ -7,6 +7,7 @@ Page({
     touzi: ['1', '2', '3', '4', '5', '6'],
     isReady: false,
     modalHidden: true,
+    isOK: false,
     value: '',
     Imgurl: [{
         url: 'https://mmbiz.qpic.cn/mmbiz_gif/bsEKk7aR18NCLTlbFogGiaUiaictIjwJJk83taibBWt8YYIJw1rexzSg2Ny81flQqGJE1z9PFTUibtKFzGp6FVWVeEA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1'
@@ -51,7 +52,8 @@ Page({
     })
     var k = Math.floor(Math.random() * 5)
     this.setData({
-      url: this.data.Imgurl[k].url
+      url: this.data.Imgurl[k].url,
+      k: k
     })
     if (wx.getStorageSync('isChoose') == true) {
       this.setData({
@@ -60,6 +62,9 @@ Page({
     }
   },
   next: function (e) {
+    this.setData({
+      isOK: true
+    })
     if (this.data.value == '') {
       this.setData({
         modalHidden: false
@@ -79,6 +84,7 @@ Page({
       let product = Product.getWithoutData(recordID)
 
       product.append('touzi', this.data.touzi[this.data.value - 1]) //在知晓云中列入每次的点数
+      product.append('rand', this.data.touzi[this.data.k]) //在知晓云中列入每次随机的点数
       product.update().then(res => {
         console.log(res)
       }, err => {

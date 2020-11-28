@@ -1,6 +1,7 @@
 <view class="input">
-    <scroll-view scroll-y="true" style="height:100%;">
-        <block wx:for="{{QT}}" refresher-triggered="{{back}}" wx:for-index="idx" wx:for-item="questions" wx:key="index">
+    <scroll-view refresher-triggered="{{back}}" scroll-y="true" style="height:98%;">
+    <text wx:if="{{isNext == false}}" class="question_title" style="margin-top:50rpx;margin-left:5%;margin-right:5%;color:rgb(73, 72, 72);font-family:'楷体'">请认真阅读下列问题，并判断其中的情境/特质是否与自己符合/相似，是的选“同意”，否的选“不同意”：</text>
+        <block wx:for="{{QT}}"  wx:for-index="idx" wx:for-item="questions" wx:key="index">
             <view class="block_container">
                 <text wx:if="{{questions.id == 32}}" selectable="{{true}}" style="color:#000; font-weight: 600rpx;font-family:'楷体'" class="question_title">{{questions.question}}
                     <text  style="color:red;font-family:'楷体'">{{questions.que}}</text></text>
@@ -45,6 +46,6 @@
 </button>
 
 
-<modal title="有问题未答哦" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+<modal title="第{{is}}题未答哦" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
 
 </modal>

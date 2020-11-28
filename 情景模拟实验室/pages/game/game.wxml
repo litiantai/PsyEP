@@ -19,7 +19,7 @@
       </radio-group>
     </view>
   </scroll-view>
-  <button bindtap="next">确定</button>
+  <button bindtap="next" style="{{isOK == false?'pointer-events:auto':'pointer-events:none'}}" >确定</button>
 </view>
 
 <modal title="请选择点数"  hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">

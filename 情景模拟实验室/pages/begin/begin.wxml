@@ -1,8 +1,10 @@
-<view class="thanks" style="margin-top:200rpx">
+<view class="thanks" style="margin-top:100rpx">
     <text style="color:aliceblue">欢迎来到PsyEP~</text>
 </view>
-<text style="color:aliceblue;margin-top:200rpx">点击【进入】开始小游戏哦(*^-^*)</text>
-<button style="margin-top:200rpx;height:60px" type="default" bindtap="next">进入</button>
+<text style="color:aliceblue;">点击【进入】开始小游戏哦(*^-^*)</text>
+
+<button style="" type="default" bindtap="next">进入</button>
+
 <view class="content">
     <text style="color:aliceblue" space="emsp">@2020.11</text>
 </view>

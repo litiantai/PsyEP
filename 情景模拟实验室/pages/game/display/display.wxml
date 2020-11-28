@@ -1,14 +1,18 @@
-<view class="big">
+<view wx:if="{{modalHidden == false}}" class="big">
   <view class="input" style="width: 80%;">
-  
-  <view class="details" style="font-size: 40rpx;line-height: 100rpx;">
-    恭喜你已通过游戏规则测试,接下来开始正式游戏
+
+    <view class="details" style="font-size: 40rpx;line-height: 100rpx;">
+      恭喜你已通过游戏规则测试,接下来开始正式游戏
+    </view>
+
+
   </view>
 
-
 </view>
-
-</view>
-<button bindtap="next">
+<button wx:if="{{modalHidden == false}}" bindtap="next">
   开始游戏
 </button>
+
+<view class="imag" wx:if="{{modalHidden == true}}" >
+  <image bindtap="Next" src="/icon/hongbao.jpg" ></image>
+</view>

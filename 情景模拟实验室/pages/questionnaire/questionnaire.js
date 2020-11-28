@@ -15,7 +15,9 @@ Page({
         SPscore: 0, //1-19
         MAscore: 0, //1-10
         SRscore: 0, //20-31
-        isNext: false
+        isNext: false,
+        avarage1: [],
+        back:false
     },
     onLoad: function (options) {
         this.setData({
@@ -44,8 +46,11 @@ Page({
         var postid = e.currentTarget.dataset.postid
         var post = true
         var avarg = this.data.avarage
-        if (postid != 31) {
-            for (var i = 0; i < 42; i++) {
+        var avarg1 = this.data.avarage1
+        var post1 = true
+        console.log(postid)
+        if (postid != 31 && this.data.isNext == false) {
+            for (var i = 0; i < 31; i++) {
                 if (this.data.avarage[i] == postid) {
                     post = false
                 }
@@ -58,8 +63,22 @@ Page({
                 })
             }
         }
+        if (this.data.isNext == true) {
+            for (var i = 0; i < 10; i++) {
+                if (avarg1[i] == postid) {
+                    post1 = false
+                }
+            }
+            if (post1 == true) {
+                avarg1.push(postid)
+                this.setData({
+                    sum: this.data.sum + 1,
+                    avarage: avarg1
+                })
+            }
+        }
         console.log(this.data.sum)
-        if (postid < 31) {
+        if (this.data.isNext == false) {
             if (id == 1) {
                 var items = this.data.question
                 items[postid].isPoint1 = true
@@ -134,11 +153,11 @@ Page({
                 })
             }
         }
-        if (this.data.sum <= 31) {
+        if (this.data.sum <= 31 && this.data.isNext == false) {
             this.setData({
                 QT: this.data.question
             })
-        } else {
+        } else if (this.data.isNext == true && this.data.sum > 31) {
             this.setData({
                 QT: this.data.items
             })
@@ -222,8 +241,27 @@ Page({
     },
     next: function (e) {
         var that = this
+        console.log(this.data.avarage)
+        console.log(this.data.avarage1)
         if (this.data.isNext == false) {
             if (this.data.sum < 31) {
+                var k
+                for (k = 0; k < 31; k++) {
+                    var isThat = false
+                    for (var i = 0; i < that.data.sum; i++) {
+                        if (that.data.avarage[i] == k) {
+                            isThat = true
+                        }
+                    }
+                    if (isThat == false) {
+                        console.log(1)
+                        var s = k + 1
+                        that.setData({
+                            is: s
+                        })
+                        break;
+                    }
+                }
                 this.setData({
                     modalHidden: false
                 })
@@ -232,16 +270,29 @@ Page({
                 this.setData({
                     QT: this.data.items,
                     isNext: true,
-                    back: false
+                    back : true
                 })
-             setTimeout(function(e){
-                 that.setData({
-                     back : false
-                 })
-             },1000)
+                setTimeout(function(e){
+                    that.bindrefresherrefresh();
+                },2000)
+                
             }
         } else if (this.data.isNext == true) {
             if (this.data.sum < 41) {
+                var k
+                for (var k = 1; k <= 10; k++) {
+                    var isThat = false
+                    for (var i = 0; i < 10; i++) {
+                        if (that.data.avarage1[i] == k) {
+                            isThat = true
+                        }
+                    }
+                    if (isThat == false) {
+                        that.setData({
+                            is: k
+                        })
+                    }
+                }
                 this.setData({
                     modalHidden: false
                 })
@@ -252,5 +303,10 @@ Page({
                 url: '/pages/information/choose/choose',
             })
         }
+    },
+    bindrefresherrefresh:function(e){
+        this.setData({
+            back : false
+        })
     }
 })

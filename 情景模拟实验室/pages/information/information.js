@@ -123,7 +123,7 @@ Page({
         this.setData({
             ischecked: wx.getStorageSync('ischecked'),
             isChecked: wx.getStorageSync('isChecked'),
-            name: wx.getStorageSync('name'),
+            name: wx.getStorageSync('province'),
             date: wx.getStorageSync('date')
         })
         console.log(this.data.isChecked)
@@ -150,7 +150,7 @@ Page({
             isName: false,
             name: ''
         })
-        wx.setStorageSync('name', '')
+        wx.setStorageSync('province', '')
     },
     dateTap: function (e) {
         this.setData({
@@ -316,11 +316,11 @@ Page({
         let Product = new wx.BaaS.TableObject(tableName)
         let product = Product.getWithoutData(recordID)
 
-        product.set('nameValue', input);
+        product.set('province', input);
         this.setData({
             name: input
         })
-        wx.setStorageSync('name', this.data.name)
+        wx.setStorageSync('province', this.data.name)
         product.update().then(res => {
             console.log(res)
         }, err => {
@@ -331,7 +331,7 @@ Page({
         if (this.data.isGameOK == false) {
             if (this.data.name == '') {
                 this.setData({
-                    is: "名字未填写",
+                    is: "省份未填写",
                     modalHidden: false
                 })
             } else if (this.data.identify == '') {

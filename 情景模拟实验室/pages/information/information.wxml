@@ -2,8 +2,8 @@
 <view class="big">
     <view class="input">
         <view wx:if="{{isGameOK == false}}">
-            <view style="height: 100%;line-height: 46rpx;">姓名：</view>
-            <input wx:if="{{isName == false}}" bindinput="NameTap" placeholder="姓名"
+            <view style="height: 100%;line-height: 46rpx;">省份：</view>
+            <input wx:if="{{isName == false}}" bindinput="NameTap" placeholder="省份"
                 placeholder-style="margin-left:15rpx"></input>
             <text wx:if="{{isName == true}}" bindtap="nametap" style="margin-right:300rpx">{{name}}</text>
         </view>

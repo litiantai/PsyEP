@@ -47,7 +47,7 @@ Page({
 
         // 设置方式一
         let data = {
-          nameValue: '',
+            province: '',
         }
 
         product.set(data).save().then(res => {

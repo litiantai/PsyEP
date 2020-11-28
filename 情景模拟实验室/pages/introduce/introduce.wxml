@@ -1,22 +1,23 @@
 <!--pages/back/back.wxml-->
-<view class="input">
-  <text class="begin">游戏规则</text>
- <!-- 损失 -->
-  <view wx:if="{{model == 1}}" class="details">
-    首先你会先获得￥5金额数。接下来你会看到一个骰子,需要你点击启动骰子，每次只能点击一次，之后报告骰子点数，屏幕随后会呈现本次操作中所损失的金额与累积额度。若报告点数为“4”时,你原本的金额数不会有损失。若报告点数是“4”之外的数字,将会在你的金额数里扣掉￥0.5。
+<scroll-view scroll-y="true" class="input">
+  <view class="begin" style="font-size:50rpx">游戏规则</view>
+  <!-- 损失 -->
+  <view class="details" style="margin-top:-20rpx">你好，感谢你的到来，本游戏是一个简单的掷骰子小游戏，具体操作如下：</view>
+  <view wx:if="{{model == 1}}" class="details" style="margin-top:-20rpx">
+    首先你会先拥有￥5金额数。接下来你会看到一个随机转动的骰子，骰子停止转动后，报告骰子点数，屏幕随后会呈现本次操作中所损失的金额与剩余额度。若报告点数为“4”时,你原本的金额数不会有损失。若报告点数是“4”之外的数字,将会在你的金额数里扣掉￥0.5。
   </view>
-  <view wx:if="{{model == 1}}" class="details">实验需要操作10次，最后所获得的金额最高为￥5。累积额度会随每次操作重新进行计算,<text
-      style="color:red">最后所得费用将根据最后的累积额度来获得。</text></view>
+  <view wx:if="{{model == 1}}" class="details" style="margin-top:-20rpx">实验需要操作10次，最后所获得的金额最高为￥5。剩余额度会随每次操作重新进行计算,<text
+      style="color:red">最后所得费用将根据最后的剩余额度来获得。</text></view>
   <view wx:if="{{model == 1}}" class="details">现在你有一次的练习操作机会，准备好后点击“下一步”。</view>
 
   <!-- 获得 -->
   <view wx:if="{{model == 0}}" class="details">
-    接下来你会看到一个骰子，需要你点击启动骰子，每次只能点击一次，之后报告骰子点数，屏幕随后会呈现本次操作中所获得的金额与累积额度。若报告点数为“4”时，你将获得金额￥0.5。若报告点数是“4”之外的数字，将没有金额增加。
+    接下来你会看到一个随机转动的骰子，骰子停止转动后，报告骰子点数，屏幕随后会呈现本次操作中所获得的金额与累积额度。若报告点数为“4”时，你将获得金额￥0.5。若报告点数是“4”之外的数字，将没有金额增加。
   </view>
   <view wx:if="{{model == 0}}" class="details">实验需要操作10次，最后所获得的金额最高为￥5。累积额度会随每次操作重新进行计算，<text
       style="color:red">最后所得费用将根据最后的累积额度来获得。</text></view>
   <view wx:if="{{model == 0}}" class="details">现在你有一次的练习操作机会，准备好后点击“下一步”。</view>
-</view>
+</scroll-view>
 
 <button bindtap="next">
   下一步
